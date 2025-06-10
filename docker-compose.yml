@@ -4,7 +4,9 @@ services:
   postgres:
     image: postgres   # hub.docker.com
     ports:
-      - '5432:5432'
+      - '5432:5432'   # HOST:CONTAINER
+                      # The first 5432 refers to the port on your local machine (the host).
+	                    # The second 5432 refers to the port inside the Docker container (the container).
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: review
